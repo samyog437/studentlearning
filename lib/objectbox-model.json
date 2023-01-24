@@ -57,7 +57,7 @@
     },
     {
       "id": "3:1133708803724402385",
-      "lastPropertyId": "6:3403387864010101592",
+      "lastPropertyId": "8:416054033907758939",
       "name": "Student",
       "properties": [
         {
@@ -93,6 +93,18 @@
           "flags": 520,
           "indexId": "1:793920947651506709",
           "relationTarget": "Batch"
+        },
+        {
+          "id": "7:6949447446269062335",
+          "name": "studentId",
+          "type": 9,
+          "flags": 2080,
+          "indexId": "4:7148625731868984456"
+        },
+        {
+          "id": "8:416054033907758939",
+          "name": "image",
+          "type": 9
         }
       ],
       "relations": [
@@ -105,7 +117,7 @@
     }
   ],
   "lastEntityId": "3:1133708803724402385",
-  "lastIndexId": "3:7542092478262787110",
+  "lastIndexId": "4:7148625731868984456",
   "lastRelationId": "1:3909601909676186380",
   "lastSequenceId": "0:0",
   "modelVersion": 5,

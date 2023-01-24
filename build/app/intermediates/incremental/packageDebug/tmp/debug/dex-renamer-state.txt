@@ -1,4 +1,4 @@
-#Thu Jan 12 13:17:33 NPT 2023
+#Tue Jan 24 11:49:39 NPT 2023
 base.0=C\:\\Users\\samyo\\Desktop\\flutterbatchapi\\batch_student_objbox_api_starter\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 renamed.0=classes.dex
 path.0=classes.dex
