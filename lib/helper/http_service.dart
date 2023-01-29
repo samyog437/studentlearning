@@ -15,7 +15,6 @@ class HttpServices {
   Map<String, String> headers = {
     'content-type': 'application/json',
     'accept': 'application/json',
-    'authorization': Constant.token,
     'language': 'en',
   };
 

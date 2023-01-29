@@ -2,10 +2,10 @@ import 'dart:io';
 
 import 'package:batch_student_objbox_api/app/constants.dart';
 import 'package:batch_student_objbox_api/data_source/remote_data_source/response/login_response.dart';
+import 'package:batch_student_objbox_api/data_source/remote_data_source/response/student_response.dart';
 import 'package:batch_student_objbox_api/helper/http_service.dart';
 import 'package:batch_student_objbox_api/model/student.dart';
 import 'package:dio/dio.dart';
-import 'package:flutter/animation.dart';
 import 'package:http_parser/http_parser.dart';
 import 'package:mime/mime.dart';
 
@@ -45,6 +45,51 @@ class StudentRemoteDataSource {
       }
     } catch (e) {
       return 0;
+    }
+  }
+
+  Future<List<Student>?> getStudentsByCourse(String courseId) async {
+    try {
+      Response response = await _httpServices.get(
+        Constant.searchStudentByCourseURL,
+        queryParameters: {
+          'courseId': courseId,
+        },
+        options: Options(
+          headers: {
+            "Authorization": Constant.token,
+          },
+        ),
+      );
+      List<Student> lstStudents = [];
+      if (response.statusCode == 201) {
+        StudentResponse stdResponse = StudentResponse.fromJson(response.data);
+        lstStudents = stdResponse.data!;
+        return lstStudents;
+      } else {
+        return [];
+      }
+    } catch (e) {
+      throw Exception(e.toString());
+    }
+  }
+
+  Future<List<Student>?> getStudentsByBatch(String batchId) async {
+    try {
+      Response response = await _httpServices.get(
+        Constant.searchStudentByBatchURL,
+        queryParameters: {
+          'batchId': batchId,
+        },
+      );
+      if (response.statusCode == 201) {
+        StudentResponse stdResponse = StudentResponse.fromJson(response.data);
+        return stdResponse.data!;
+      } else {
+        return [];
+      }
+    } catch (e) {
+      return [];
     }
   }
 

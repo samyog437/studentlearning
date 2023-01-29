@@ -21,17 +21,25 @@ class Student {
   String? username;
   String? password;
 
+  @JsonKey(name: 'batch')
+  Batch? batches;
+  @JsonKey(name: 'course')
+  List<Course>? courses;
+
   final batch = ToOne<Batch>();
   final course = ToMany<Course>();
 
-  Student(
-      {this.stdId = 0,
-      this.studentId,
-      this.fname,
-      this.lname,
-      this.image,
-      this.username,
-      this.password});
+  Student({
+    this.studentId,
+    this.fname,
+    this.lname,
+    this.image,
+    this.username,
+    this.password,
+    this.batches,
+    this.courses,
+    this.stdId = 0,
+  });
 
   factory Student.fromJson(Map<String, dynamic> json) =>
       _$StudentFromJson(json);

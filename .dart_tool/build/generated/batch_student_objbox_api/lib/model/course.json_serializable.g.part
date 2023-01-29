@@ -3,8 +3,8 @@
 // **************************************************************************
 
 Course _$CourseFromJson(Map<String, dynamic> json) => Course(
-      json['_id'] as String?,
-      json['courseName'] as String?,
+      json['_id'] as String,
+      json['courseName'] as String,
       id: json['id'] as int? ?? 0,
     );
 
